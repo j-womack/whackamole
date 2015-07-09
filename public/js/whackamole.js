@@ -5,31 +5,30 @@ var previousHole;
 var score = 0;
 var speed = 1000;
 var seconds = 0
+var highScore = 0;
+
 $('.start').click(function(){
     selectRandom();
     $(this).html('');
     $(this).removeClass('start active');
     $(selectedHole).addClass('active');
-    var interval = setInterval(game, speed);
+
+    setInterval(game, speed);
+
     $(this).off('click');
+
     $('.hole').on('click', function(){
         if ($(this).hasClass('active')){
             score+=10;
-            speed = 1000 - score / 2;
-            // console.log(score);
+            // speed = 1000 - score / 2;
             $('.yourScore').html('Score: ' + score);
-            // $(this).hide("puff", 100);
+            // $('#click').play();
         } else {
             score-=5;
-            speed = 1000 - score / 2;
-            // console.log(score);
+            // speed = 1000 - score / 2;
             $('.yourScore').html('Score: ' + score);
         }
-            // setTimeout(function(){
-            // $(this).show("fold", 50));
-            // }, 100)
-        return speed;
-    })
+    });
 });
 
 function selectRandom() {
@@ -38,7 +37,7 @@ function selectRandom() {
     selectedHole = holes[decision];
 };
 
-function game(interval) {    
+function game() {    
     selectRandom();
     seconds++;
     $(previousHole).removeClass('active');
@@ -51,16 +50,18 @@ function game(interval) {
         $('.countdown').html('Time Remaining: 0:0' + (30 - seconds));
     }
     if ((30 - seconds) <= 0){
-        gameOver(interval);
+        gameOver();
     }
 };
 
-function gameOver(interval) {
-    console.log(interval);
-    clearInterval(interval);
+function gameOver() {
     seconds = 0;
+    if (score > highScore) {
+        highScore = score;
+        $('.highScore').html('High Score: ' + highScore);
+    }
     score = 0;
-    $('.highScore').html('High Score: ' + score);
+    $('.yourScore').html('Score: ' + score);
 
 }
     

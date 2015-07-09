@@ -1,6 +1,7 @@
 body {
     text-align: center;
-    color: grey;
+    font-family: 'Codystar', cursive;
+    color: lightgrey;
     background-image: url("/img/stardust.png");
 }
 
@@ -8,22 +9,21 @@ body {
     width: 600px;
     height: 600px;
     margin: auto;
+    margin-bottom: 45px;
 }
 
 .hole {
     width: 200px;
     height: 200px;
     float: left;
-    border: 1px dotted lightsteelblue;
+    border: 1px dotted lightgrey;
 }
 
 .active {
     content: url(/img/star.png);
 }
 
-.startText {
-    z-index: 10;
-    color: black;
-    font-size: 4em;
+.row {
+    margin: auto;
 }
 

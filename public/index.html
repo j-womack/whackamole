@@ -4,13 +4,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <title>Whack A Mole</title>
     <link rel="stylesheet" href="/css/whackamole.css" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Codystar:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <main class="container">
-        <h1>Whack A "Mole"</h1>
-        <h3 class="yourScore">Score: 0</h3>
-        <h3 class="highScore"></h3>
-        <h3 class="countdown">Time Remaining: 0:30</h3>
+    <audio autoplay loop src="/sounds/background.ogg"></audio>
+    <audio src="/sounds/click.ogg" id="click"></audio>
+    <audio src="/sounds/highscore.ogg" id="highScore"></audio>
+    <audio src="/sounds/newround.ogg" id="newRound"></audio>
+    <main class="container col-lg-12">
+        <h1>Button-Mash A Mysterious&nbsp;Light</h1>
+        <div class="row">
+            <h3 class="yourScore col-lg-offset-3 col-lg-2">Score: 0</h3>
+            <h3 class="countdown col-lg-2">Time&nbsp;Remaining: 0:30</h3>
+            <h3 class="highScore col-lg-2"></h3>
+        </div>
 
         <div id="gameBoard">
             <div class="hole 1"></div>
@@ -23,9 +30,6 @@
             <div class="hole 8"></div>
             <div class="hole 9"></div>
         </div>
-
-        <!-- <img src="/img/star.png"> -->
-
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
