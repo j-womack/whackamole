@@ -1,5 +1,7 @@
 body {
     text-align: center;
+    color: grey;
+    background-image: url("/img/stardust.png");
 }
 
 #gameBoard{
@@ -12,13 +14,16 @@ body {
     width: 200px;
     height: 200px;
     float: left;
-    border: 1px dotted salmon;
+    border: 1px dotted lightsteelblue;
 }
 
 .active {
-    background-color: grey;
+    content: url(/img/star.png);
 }
 
 .startText {
+    z-index: 10;
+    color: black;
     font-size: 4em;
 }
+
